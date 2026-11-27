@@ -1,4 +1,4 @@
-# koows
+# @isitwa/koows
 
 Server-side client for [Koows](https://koows.com) publications. Fetch stories, search and tags, render story content to React, and build RSS feeds and SEO metadata for your own site.
 
@@ -7,10 +7,10 @@ Works in any Node.js 18+ server: Next.js (App Router), Remix, Astro, Express, bu
 ## Install
 
 ```bash
-npm install koows
+npm install @isitwa/koows
 ```
 
-`react` is only needed if you use `koows/render`.
+`react` is only needed if you use `@isitwa/koows/render`.
 
 ## Get a site key
 
@@ -28,8 +28,8 @@ The key can only read published content of one publication. Revoke it any time f
 ## Usage
 
 ```ts
-import { createKoows, nextBlogCache, prepareDocument } from "koows"
-import { renderContent } from "koows/render"
+import { createKoows, nextBlogCache, prepareDocument } from "@isitwa/koows"
+import { renderContent } from "@isitwa/koows/render"
 
 const blog = createKoows({
   apiKey: process.env.KOOWS_SITE_KEY,
@@ -70,7 +70,7 @@ New self-hosted sites need an `apiKey`.
 | `searchStories(query)` | Matching stories, `[]` on failure |
 | `getSitemapStories()` | All published stories, deduplicated |
 | `prepareDocument(doc, title)` | `{ content, toc }`: content without a duplicate title, with heading ids |
-| `renderContent(nodes)` (`koows/render`) | React elements for TipTap content: headings, lists, code blocks with copy, tables, FAQ, images, embeds |
+| `renderContent(nodes)` (`@isitwa/koows/render`) | React elements for TipTap content: headings, lists, code blocks with copy, tables, FAQ, images, embeds |
 | `buildRss(stories, channel)` | RSS 2.0 XML string |
 | `listingMetadata`, `postMetadata`, `postSchema`, `breadcrumbs`, `faqSchema` | Metadata and JSON-LD for SEO |
 | `safeLink`, `safeImage`, `safeEmbed`, `validSlug`, `parsePage`, `parseQuery`, `legacySlug` | Input and URL guards |

@@ -1,0 +1,67 @@
+{
+  "name": "koows",
+  "version": "0.1.0",
+  "description": "Server-side client for Koows publications: stories, search, tags, TipTap rendering, RSS and SEO.",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koows/Koows-SDK.git"
+  },
+  "homepage": "https://github.com/Koows/Koows-SDK#readme",
+  "bugs": "https://github.com/Koows/Koows-SDK/issues",
+  "keywords": [
+    "koows",
+    "blog",
+    "cms",
+    "headless-cms",
+    "tiptap",
+    "rss",
+    "seo",
+    "nextjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./render": {
+      "types": "./dist/renderer.d.ts",
+      "default": "./dist/renderer.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test src/*.test.ts",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "dependencies": {
+    "zod": "3.25.76"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "typescript": "5.9.3",
+    "@types/node": "^22"
+  }
+}
